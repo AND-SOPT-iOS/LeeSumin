@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7467A7812CB10AC100956FE3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7467A7802CB10AC100956FE3 /* SnapKit */; };
+		7467A7832CB10AC100956FE3 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7467A7822CB10AC100956FE3 /* SnapKit-Dynamic */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		741E95A02CB0F3E300CC4707 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7467A7812CB10AC100956FE3 /* SnapKit in Frameworks */,
+				7467A7832CB10AC100956FE3 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +132,8 @@
 			);
 			name = "AND-SOPT-LeeSumin";
 			packageProductDependencies = (
+				7467A7802CB10AC100956FE3 /* SnapKit */,
+				7467A7822CB10AC100956FE3 /* SnapKit-Dynamic */,
 			);
 			productName = "AND-SOPT-LeeSumin";
 			productReference = 741E95892CB0F3E000CC4707 /* AND-SOPT-LeeSumin.app */;
@@ -208,6 +217,9 @@
 			);
 			mainGroup = 741E95802CB0F3E000CC4707;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				741E95CD2CB10A5200CC4707 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 741E958A2CB0F3E000CC4707 /* Products */;
 			projectDirPath = "";
@@ -561,6 +573,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		741E95CD2CB10A5200CC4707 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7467A7802CB10AC100956FE3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 741E95CD2CB10A5200CC4707 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7467A7822CB10AC100956FE3 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 741E95CD2CB10A5200CC4707 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 741E95812CB0F3E000CC4707 /* Project object */;
 }
