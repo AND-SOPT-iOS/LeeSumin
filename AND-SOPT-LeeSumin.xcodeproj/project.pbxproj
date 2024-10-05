@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		743A5B0F2CB10D3400863A7C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 743A5B0E2CB10D3400863A7C /* Then */; };
 		7467A7812CB10AC100956FE3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7467A7802CB10AC100956FE3 /* SnapKit */; };
-		7467A7832CB10AC100956FE3 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7467A7822CB10AC100956FE3 /* SnapKit-Dynamic */; };
+		74F53B9A2CB11A3B006F4A3D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 74F53B992CB11A3B006F4A3D /* SnapKit */; };
+		74F53B9C2CB11A3B006F4A3D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 74F53B9B2CB11A3B006F4A3D /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +74,6 @@
 			files = (
 				7467A7812CB10AC100956FE3 /* SnapKit in Frameworks */,
 				743A5B0F2CB10D3400863A7C /* Then in Frameworks */,
-				7467A7832CB10AC100956FE3 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F53B9A2CB11A3B006F4A3D /* SnapKit in Frameworks */,
+				74F53B9C2CB11A3B006F4A3D /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +137,6 @@
 			name = "AND-SOPT-LeeSumin";
 			packageProductDependencies = (
 				7467A7802CB10AC100956FE3 /* SnapKit */,
-				7467A7822CB10AC100956FE3 /* SnapKit-Dynamic */,
 				743A5B0E2CB10D3400863A7C /* Then */,
 			);
 			productName = "AND-SOPT-LeeSumin";
@@ -160,6 +161,8 @@
 			);
 			name = "AND-SOPT-LeeSuminTests";
 			packageProductDependencies = (
+				74F53B992CB11A3B006F4A3D /* SnapKit */,
+				74F53B9B2CB11A3B006F4A3D /* SnapKit-Dynamic */,
 			);
 			productName = "AND-SOPT-LeeSuminTests";
 			productReference = 741E959F2CB0F3E300CC4707 /* AND-SOPT-LeeSuminTests.xctest */;
@@ -608,7 +611,12 @@
 			package = 741E95CD2CB10A5200CC4707 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		7467A7822CB10AC100956FE3 /* SnapKit-Dynamic */ = {
+		74F53B992CB11A3B006F4A3D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 741E95CD2CB10A5200CC4707 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		74F53B9B2CB11A3B006F4A3D /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 741E95CD2CB10A5200CC4707 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";

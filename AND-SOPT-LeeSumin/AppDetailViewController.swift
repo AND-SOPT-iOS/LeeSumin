@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class AppDetailViewController: UIViewController {
 
@@ -13,10 +14,19 @@ class AppDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.view.addSubViews(appDetailView)
+        appDetailView.snp.makeConstraints() {
+            $0.edges.equalToSuperview()
+        }
+        setAppDetailView()
     }
     
-
+    func setAppDetailView() {
+        appDetailView.appIcon.image = UIImage(resource: .appIcon)
+        appDetailView.appTitle.text = "데이트로드 - 커플들이 직접 공유하는 데이트 코스"
+        appDetailView.appDescription.text = "쉽고 빠른 데이트 코스 짜기"
+    }
     
 
     
