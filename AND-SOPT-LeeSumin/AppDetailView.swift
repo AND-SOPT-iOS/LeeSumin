@@ -11,7 +11,7 @@ import Then
 
 class AppDetailView: UIView {
 
-    private var topView: UIView = UIView()
+    private var appInfoView: UIView = UIView()
     
     private var appIcon : UIImageView = UIImageView()
     
@@ -33,10 +33,17 @@ class AppDetailView: UIView {
     }
     
     private func setHierarchy() {
-
+        self.addSubViews(appInfoView)
+        appInfoView.addSubViews(appIcon,
+                                appTitle,
+                                appDescription)
     }
 
     private func setLayout() {
+        appInfoView.snp.makeConstraints {
+            <#T##other: any ConstraintRelatableTarget##any ConstraintRelatableTarget#>)
+        }
+        
         appIcon.snp.makeConstraints {
             
         }
