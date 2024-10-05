@@ -62,17 +62,17 @@ class AppDetailView: UIView {
         }
         
         appDescription.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(60)
+            $0.top.equalToSuperview().offset(55)
             $0.leading.equalToSuperview().inset(150)
             $0.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(15)
         }
         
         appInstallButton.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(90)
+            $0.top.equalToSuperview().offset(80)
             $0.leading.equalToSuperview().inset(150)
             $0.bottom.equalTo(appIcon.snp.bottom)
-            $0.width.equalTo(60)
+            $0.width.equalTo(70)
         }
     }
     
@@ -103,9 +103,10 @@ class AppDetailView: UIView {
         
         appInstallButton.do {
             $0.backgroundColor = .systemBlue
-            $0.layer.cornerRadius = 12
+            $0.layer.cornerRadius = 16
             $0.setTitleColor(.white, for: .normal)
             $0.setTitle("설치", for: .normal)
+            $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         }
         
         
