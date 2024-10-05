@@ -41,7 +41,9 @@ class AppDetailView: UIView {
 
     private func setLayout() {
         appInfoView.snp.makeConstraints {
-            <#T##other: any ConstraintRelatableTarget##any ConstraintRelatableTarget#>)
+            $0.top.equalToSuperview().inset(50)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(ScreenUtils.height * 0.2)
         }
         
         appIcon.snp.makeConstraints {
