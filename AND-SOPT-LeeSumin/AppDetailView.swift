@@ -41,25 +41,36 @@ class AppDetailView: UIView {
 
     private func setLayout() {
         appInfoView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(50)
+            $0.top.equalToSuperview().inset(30)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(ScreenUtils.height * 0.2)
         }
         
         appIcon.snp.makeConstraints {
-            
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().inset(20)
+            $0.width.height.equalTo(80)
         }
         
         appTitle.snp.makeConstraints {
-            
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().inset(140)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(40)
         }
         
         appDescription.snp.makeConstraints {
-            
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().inset(140)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(10)
         }
         
         appInstallButton.snp.makeConstraints {
-            
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().inset(140)
+            $0.bottom.equalToSuperview()
+            $0.width.equalTo(60)
         }
     }
     
