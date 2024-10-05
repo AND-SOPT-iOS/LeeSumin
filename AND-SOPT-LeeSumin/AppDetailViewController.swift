@@ -6,15 +6,19 @@
 //
 
 import UIKit
-import SnapKit
 
-class ViewController: UIViewController {
+class AppDetailViewController: UIViewController {
 
+    var appDetailView = AppDetailView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
 
+    
 
+    
 }
 
