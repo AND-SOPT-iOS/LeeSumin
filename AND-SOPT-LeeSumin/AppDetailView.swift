@@ -114,7 +114,7 @@ class AppDetailView: UIView {
             $0.backgroundColor = .systemBlue
             $0.layer.cornerRadius = 16
             $0.setTitleColor(.white, for: .normal)
-            $0.setTitle("설치", for: .normal)
+            $0.setTitle(StringLiterals.AppDetailView.download, for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         }
         
