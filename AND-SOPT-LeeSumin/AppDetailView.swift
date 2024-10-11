@@ -21,6 +21,8 @@ class AppDetailView: UIView {
     
     private var appInstallButton : UIButton = UIButton()
     
+    private var shareButton : UIButton = UIButton()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -38,7 +40,8 @@ class AppDetailView: UIView {
         appInfoView.addSubViews(appIcon,
                                 appTitle,
                                 appDescription,
-                                appInstallButton)
+                                appInstallButton,
+                                shareButton)
     }
 
     private func setLayout() {
@@ -74,6 +77,12 @@ class AppDetailView: UIView {
             $0.bottom.equalTo(appIcon.snp.bottom)
             $0.width.equalTo(70)
         }
+        
+        shareButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(appIcon.snp.bottom)
+            $0.width.height.equalTo(30)
+        }
     }
     
     private func setStyle() {
@@ -91,9 +100,9 @@ class AppDetailView: UIView {
         }
         
         appTitle.do {
-            $0.textColor = .black
-            $0.font = .systemFont(ofSize: 20, weight: .semibold)
-            $0.numberOfLines = 2
+            $0.setLabel(textColor: .black,
+                        font: .systemFont(ofSize: 20, weight: .semibold),
+                        numberOfLines: 2)
         }
         
         appDescription.do {
@@ -109,6 +118,9 @@ class AppDetailView: UIView {
             $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         }
         
+        shareButton.do {
+            $0.imageView?.image = UIImage(systemName: "square.and.arrow.up")?.withTintColor(.systemBlue)
+        }
         
     }
 
