@@ -10,9 +10,15 @@ import UIKit
 import SnapKit
 import Then
 
+
+protocol ShareDelegate : AnyObject {
+    func dataBind(nickname: String)
+}
+
 class ModalViewController : UIViewController {
     
     var modalView = ModalView()
+    weak var shareDelegate: ShareDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,14 @@ class ModalViewController : UIViewController {
         modalView.snp.makeConstraints() {
             $0.edges.equalToSuperview()
         }
+        modalView.finishButton.addTarget(self, action: #selector(finishButtonTapped), for: .touchUpInside)
     }
     
+    @objc
+    func finishButtonTapped() {
+        if let nickname = modalView.exampleTextField.text {
+            shareDelegate?.dataBind(nickname: nickname)
+        }
+        self.dismiss(animated: true)
+    }
 }
