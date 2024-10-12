@@ -6,12 +6,13 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
 class AppDetailView: UIView {
 
-    private var appInfoView: UIView = UIView()
+    var appInfoView: UIView = UIView()
     
     var appIcon : UIImageView = UIImageView()
     
@@ -21,7 +22,7 @@ class AppDetailView: UIView {
     
     private var appInstallButton : UIButton = UIButton()
     
-    private var shareButton : UIButton = UIButton()
+    var shareButton : UIButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,7 +80,7 @@ class AppDetailView: UIView {
         }
         
         shareButton.snp.makeConstraints {
-            $0.trailing.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(20)
             $0.bottom.equalTo(appIcon.snp.bottom)
             $0.width.height.equalTo(30)
         }
@@ -119,7 +120,7 @@ class AppDetailView: UIView {
         }
         
         shareButton.do {
-            $0.imageView?.image = UIImage(systemName: "square.and.arrow.up")?.withTintColor(.systemBlue)
+            $0.setImage(UIImage(systemName: "square.and.arrow.up")?.withTintColor(.systemBlue), for: .normal)
         }
         
     }

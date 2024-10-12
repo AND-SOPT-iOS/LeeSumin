@@ -26,8 +26,13 @@ class AppDetailViewController: UIViewController {
         appDetailView.appIcon.image = UIImage(resource: .appIcon)
         appDetailView.appTitle.text = "데이트로드 - 커플들이 직접 공유하는 데이트 코스"
         appDetailView.appDescription.text = "쉽고 빠른 데이트 코스 짜기"
+        appDetailView.shareButton.addTarget(self, action: #selector(tapShareButon), for: .touchUpInside)
     }
     
+    @objc
+    func tapShareButon() {
+        self.present(ModalViewController(), animated: true)
+    }
 
     
 }
