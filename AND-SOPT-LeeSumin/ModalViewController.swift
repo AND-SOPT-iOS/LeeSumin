@@ -1,5 +1,5 @@
 //
-//  AppIconDetailVi.swift
+//  ModalViewController.swift
 //  AND-SOPT-LeeSumin
 //
 //  Created by 이수민 on 10/12/24.
