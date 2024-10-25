@@ -11,6 +11,7 @@ import SnapKit
 class AppDetailViewController: UIViewController {
 
     var appDetailView = AppDetailView()
+    var nickname : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +32,15 @@ class AppDetailViewController: UIViewController {
     
     @objc
     func tapShareButon() {
-        self.present(ModalViewController(), animated: true)
+        let modalVC = ModalViewController()
+        modalVC.shareDelegate = self
+        self.present(modalVC, animated: true)
     }
-
-    
 }
 
+extension AppDetailViewController : ShareDelegate {
+    func dataBind(nickname: String) {
+        self.nickname = nickname
+        appDetailView.appTitle.text = nickname
+    }
+}

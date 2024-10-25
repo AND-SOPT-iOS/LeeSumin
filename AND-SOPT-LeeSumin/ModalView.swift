@@ -12,9 +12,9 @@ import Then
 
 class ModalView: UIView {
     
-    private var exampleTextField : UITextField = UITextField()
+    var exampleTextField : UITextField = UITextField()
     
-    private var finishButton : UIButton = UIButton()
+    var finishButton : UIButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
