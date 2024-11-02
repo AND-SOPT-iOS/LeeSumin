@@ -359,6 +359,8 @@
 		};
 		741E95B52CB0F3E300CC4707 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 741E958B2CB0F3E000CC4707 /* AND-SOPT-LeeSumin */;
+			baseConfigurationReferenceRelativePath = Global/Configurartions/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -422,6 +424,8 @@
 		};
 		741E95B62CB0F3E300CC4707 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 741E958B2CB0F3E000CC4707 /* AND-SOPT-LeeSumin */;
+			baseConfigurationReferenceRelativePath = Global/Configurartions/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
