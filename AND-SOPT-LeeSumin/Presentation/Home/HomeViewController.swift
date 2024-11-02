@@ -13,17 +13,10 @@ import Then
 
 class HomeViewController: UIViewController {
     
-    // MARK: - Properties
     private let collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
-    ).then {
-        $0.backgroundColor = .systemBackground
-        $0.register(FeaturedCell.self,
-                   forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
-        $0.register(CategoryCell.self,
-                   forCellWithReuseIdentifier: CategoryCell.reuseIdentifier)
-    }
+    )
     
     private var dataSource: UICollectionViewDiffableDataSource<AppStoreSectionType, AppItem>!
     
@@ -31,14 +24,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUI()
+        setLayout()
         setCollectionView()
         configureDataSource()
         applyInitialSnapshots()
     }
     
     // MARK: - Setup
-    private func setUI() {
+    private func setLayout() {
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
@@ -47,53 +40,60 @@ class HomeViewController: UIViewController {
     }
     
     private func setCollectionView() {
-        collectionView.collectionViewLayout = createLayout()
+        collectionView.do {
+            $0.collectionViewLayout = createLayout()
+            $0.register(FeaturedCell.self,
+                        forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
+            $0.register(CategoryCell.self,
+                        forCellWithReuseIdentifier: CategoryCell.reuseIdentifier)
+            $0.register(HeaderCell.self,
+                        forCellWithReuseIdentifier: HeaderCell.reuseIdentifier)
+        }
     }
     
     private func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<AppStoreSectionType, AppItem>(
             collectionView: collectionView
         ) { collectionView, indexPath, item in
-            switch AppStoreSectionType.allCases[indexPath.section] {
-            case .featured:
+            switch item.type {
+            case .header:
                 let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: FeaturedCell.reuseIdentifier,
+                    withReuseIdentifier: HeaderCell.reuseIdentifier,
                     for: indexPath
-                ) as! FeaturedCell
-                cell.configure(with: item)
+                ) as! HeaderCell
+                cell.configure(title: item.title, subtitle: item.subtitle)
                 return cell
                 
-            case .categories:
-                let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: CategoryCell.reuseIdentifier,
-                    for: indexPath
-                ) as! CategoryCell
-                cell.configure(with: item)
-                return cell
+            case .app:
+                switch AppStoreSectionType.allCases[indexPath.section] {
+                case .featured:
+                    let cell = collectionView.dequeueReusableCell(
+                        withReuseIdentifier: FeaturedCell.reuseIdentifier,
+                        for: indexPath
+                    ) as! FeaturedCell
+                    cell.configure(with: item)
+                    return cell
+                    
+                case .categories:
+                    let cell = collectionView.dequeueReusableCell(
+                        withReuseIdentifier: CategoryCell.reuseIdentifier,
+                        for: indexPath
+                    ) as! CategoryCell
+                    cell.configure(with: item)
+                    return cell
+                }
             }
         }
     }
     
     private func applyInitialSnapshots() {
-        let featuredItems = [
-            AppItem(title: "TVING", subtitle: "2024-2025 KCC 프로농구", image: UIImage(resource: .tving)),
-            AppItem(title: "TVING", subtitle: "2024-2025 KCC 프로농구", image: UIImage(resource: .tving)),
-            AppItem(title: "TVING", subtitle: "2024-2025 KCC 프로농구", image: UIImage(resource: .tving)),
-        ]
-        
-        let categoryItems = [
-            AppItem(title: "데이트로드", subtitle: "커플들이 직접 공유하는 데이트 코스", image: UIImage(resource: .appIcon)),
-            AppItem(title: "데이트로드", subtitle: "커플들이 직접 공유하는 데이트 코스", image: UIImage(resource: .appIcon)),
-            AppItem(title: "데이트로드", subtitle: "커플들이 직접 공유하는 데이트 코스", image: UIImage(resource: .appIcon)),
-        ]
-        
         var snapshot = NSDiffableDataSourceSnapshot<AppStoreSectionType, AppItem>()
         
         snapshot.appendSections([.featured, .categories])
 
-        snapshot.appendItems(featuredItems, toSection: .featured)
-        snapshot.appendItems(categoryItems, toSection: .categories)
-
+        snapshot.appendItems(AppItem.dummyFeatured, toSection: .featured)
+        snapshot.appendItems(AppItem.dummyCategories, toSection: .categories)
+        
         dataSource.apply(snapshot, animatingDifferences: true)
     }
     

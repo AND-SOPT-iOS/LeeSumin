@@ -15,6 +15,8 @@ class FeaturedCell: UICollectionViewCell {
     
     private let imageView = UIImageView()
     
+    private let minititleLabel = UILabel()
+    
     private let titleLabel = UILabel()
     
     private let subtitleLabel = UILabel()
@@ -22,7 +24,7 @@ class FeaturedCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addSubViews(imageView, titleLabel, subtitleLabel)
+        self.addSubViews(minititleLabel, imageView, titleLabel, subtitleLabel)
         setLayout()
         setUI()
     }
@@ -32,8 +34,13 @@ class FeaturedCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        titleLabel.snp.makeConstraints {
+        minititleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(8)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(minititleLabel.snp.bottom).offset(2)
             $0.leading.trailing.equalToSuperview().inset(8)
         }
         
@@ -60,6 +67,11 @@ class FeaturedCell: UICollectionViewCell {
             $0.layer.cornerRadius = 12
         }
         
+        minititleLabel.do {
+            $0.font = .systemFont(ofSize: 12, weight: .semibold)
+            $0.textColor = .systemCyan
+        }
+        
         titleLabel.do {
             $0.font = .systemFont(ofSize: 22, weight: .bold)
             $0.textColor = .label
@@ -72,6 +84,7 @@ class FeaturedCell: UICollectionViewCell {
     }
     
     func configure(with item: AppItem) {
+        minititleLabel.text = "지금 뜨는"
         titleLabel.text = item.title
         subtitleLabel.text = item.subtitle
         imageView.image = item.image

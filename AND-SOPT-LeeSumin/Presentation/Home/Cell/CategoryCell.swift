@@ -36,36 +36,36 @@ class CategoryCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        imageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(60)
+        imageView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(8)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(60)
         }
         
-        downloadButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(-16)
-            make.centerY.equalToSuperview()
-            make.width.greaterThanOrEqualTo(60)
-            make.height.equalTo(28)
+        downloadButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(8)
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(70)
+            $0.height.equalTo(28)
         }
         
-        titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(imageView.snp.trailing).offset(12)
-            make.trailing.equalTo(downloadButton.snp.leading).offset(-12)
-            make.bottom.equalTo(contentView.snp.centerY).offset(-2)
+        titleLabel.snp.makeConstraints {
+            $0.leading.equalTo(imageView.snp.trailing).offset(12)
+            $0.trailing.equalTo(downloadButton.snp.leading).inset(12)
+            $0.bottom.equalTo(contentView.snp.centerY).offset(-2)
         }
         
-        subtitleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(titleLabel)
-            make.trailing.equalTo(downloadButton.snp.leading).offset(-12)
-            make.top.equalTo(contentView.snp.centerY).offset(2)
+        subtitleLabel.snp.makeConstraints {
+            $0.leading.equalTo(titleLabel)
+            $0.trailing.equalTo(downloadButton.snp.leading).inset(12)
+            $0.top.equalTo(contentView.snp.centerY).offset(2)
         }
         
-        dividerLine.snp.makeConstraints { make in
-            make.leading.equalTo(titleLabel)
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.height.equalTo(0.5)
+        dividerLine.snp.makeConstraints {
+            $0.leading.equalTo(titleLabel)
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(0.5)
         }
     }
     
