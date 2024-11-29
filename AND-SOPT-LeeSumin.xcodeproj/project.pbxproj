@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		743A5B0F2CB10D3400863A7C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 743A5B0E2CB10D3400863A7C /* Then */; };
+		745D06E12CD5F3AE0030BE7D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 745D06E02CD5F3AE0030BE7D /* Alamofire */; };
 		7467A7812CB10AC100956FE3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7467A7802CB10AC100956FE3 /* SnapKit */; };
 		74F53B9A2CB11A3B006F4A3D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 74F53B992CB11A3B006F4A3D /* SnapKit */; };
 		74F53B9C2CB11A3B006F4A3D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 74F53B9B2CB11A3B006F4A3D /* SnapKit-Dynamic */; };
@@ -40,7 +41,7 @@
 		741E95B12CB0F3E300CC4707 /* Exceptions for "AND-SOPT-LeeSumin" folder in "AND-SOPT-LeeSumin" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Application/Info.plist,
 			);
 			target = 741E95882CB0F3E000CC4707 /* AND-SOPT-LeeSumin */;
 		};
@@ -72,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745D06E12CD5F3AE0030BE7D /* Alamofire in Frameworks */,
 				7467A7812CB10AC100956FE3 /* SnapKit in Frameworks */,
 				743A5B0F2CB10D3400863A7C /* Then in Frameworks */,
 			);
@@ -138,6 +140,7 @@
 			packageProductDependencies = (
 				7467A7802CB10AC100956FE3 /* SnapKit */,
 				743A5B0E2CB10D3400863A7C /* Then */,
+				745D06E02CD5F3AE0030BE7D /* Alamofire */,
 			);
 			productName = "AND-SOPT-LeeSumin";
 			productReference = 741E95892CB0F3E000CC4707 /* AND-SOPT-LeeSumin.app */;
@@ -226,6 +229,7 @@
 			packageReferences = (
 				741E95CD2CB10A5200CC4707 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				743A5B0D2CB10D3400863A7C /* XCRemoteSwiftPackageReference "Then" */,
+				745D06DF2CD5F3AE0030BE7D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 741E958A2CB0F3E000CC4707 /* Products */;
@@ -355,6 +359,8 @@
 		};
 		741E95B52CB0F3E300CC4707 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 741E958B2CB0F3E000CC4707 /* AND-SOPT-LeeSumin */;
+			baseConfigurationReferenceRelativePath = Global/Configurartions/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -418,6 +424,8 @@
 		};
 		741E95B62CB0F3E300CC4707 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 741E958B2CB0F3E000CC4707 /* AND-SOPT-LeeSumin */;
+			baseConfigurationReferenceRelativePath = Global/Configurartions/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -598,6 +606,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		745D06DF2CD5F3AE0030BE7D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -605,6 +621,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 743A5B0D2CB10D3400863A7C /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		745D06E02CD5F3AE0030BE7D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 745D06DF2CD5F3AE0030BE7D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		7467A7802CB10AC100956FE3 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
