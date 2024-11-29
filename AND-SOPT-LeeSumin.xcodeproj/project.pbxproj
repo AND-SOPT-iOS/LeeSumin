@@ -41,7 +41,7 @@
 		741E95B12CB0F3E300CC4707 /* Exceptions for "AND-SOPT-LeeSumin" folder in "AND-SOPT-LeeSumin" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Application/Info.plist,
+				Info.plist,
 			);
 			target = 741E95882CB0F3E000CC4707 /* AND-SOPT-LeeSumin */;
 		};
