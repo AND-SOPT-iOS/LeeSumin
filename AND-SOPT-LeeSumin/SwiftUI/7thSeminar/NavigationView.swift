@@ -64,7 +64,7 @@ struct NavigationExampleView: View {
                 // 모달 닫힐 때 실행
                 print("모달이 닫혔습니다")
             } content: {
-                SwiftUIㅡㅐㅇView(isPresented: $isShowingSheet)
+                SwiftUIModalView(isPresented: $isShowingSheet)
             }
         }
     }
